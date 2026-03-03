@@ -51,3 +51,4 @@ test:
 clean:
 	find . -type d -name "__pycache__" -prune -exec rm -rf {} +
 	find . -type f -name "*.pyc" -delete
+	rm -rf ft_liner_regression.egg-info
