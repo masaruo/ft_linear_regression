@@ -1,0 +1,25 @@
+[project]
+name = "ft-liner-regression"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "matplotlib>=3.10.0",
+    "numpy>=2.4.2",
+    "tqdm>=4.67.3",
+]
+
+[dependency-groups]
+dev = [
+    "mypy>=1.19.1",
+    "pytest>=9.0.2",
+    "ruff>=0.15.2",
+]
+
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-background = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["src"]
