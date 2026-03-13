@@ -11,29 +11,8 @@ make setup
 ## Common commands
 
 ```bash
-make run
-make run KM=100000
-make eval
-make plot
-```
-
-## Tuning examples
-
-Change epochs and learning rate:
-
-```bash
-make run EPOCHS=100000 LR=5e-3
-make eval EPOCHS=80000 LR=1e-2 TEST_RATIO=0.25 SEED=7
-make plot EPOCHS=50000 LR=1e-2 PLOT=fit.png
-```
-
-## CLI direct usage
-
-```bash
-uv run python src/ft_lr/__main__.py --data data.csv --epochs 50000 --lr 1e-2
-uv run python src/ft_lr/__main__.py --km 61789
-uv run python src/ft_lr/__main__.py --eval --test-ratio 0.2 --seed 42
-uv run python src/ft_lr/__main__.py --plot plot.png
+make train
+make predict KM=100000
 ```
 
 ## Output notes (詳細)
@@ -54,7 +33,7 @@ uv run python src/ft_lr/__main__.py --plot plot.png
 	- 指定した `--km` に対する予測価格です。
 	- 計算は `theta0 + theta1 * km` で行われます。
 
-### 誤差指標（train/test）
+<!-- ### 誤差指標（train/test）
 
 - `train_mae`, `test_mae`
 	- 平均絶対誤差（MAE）で、式は `mean(|y - y_hat|)` です。
@@ -74,9 +53,9 @@ uv run python src/ft_lr/__main__.py --plot plot.png
 	- `SS_tot`（全変動平方和）は `Σ (y_i - y_mean)^2` です。
 		- 実測値と平均値のズレを 2 乗して合計したものです。
 	- 1.0 に近いほど説明力が高く、0.0 は「平均予測と同程度」、マイナスは「平均予測より悪い」を意味します。
-	- 大きいほど良いです。
+	- 大きいほど良いです。 -->
 
-### baseline（基準モデル）
+<!-- ### baseline（基準モデル）
 
 - `baseline_test_*`
 	- 学習モデルではなく、「訓練データの平均価格を常に予測するだけ」の単純モデルです。
@@ -90,4 +69,4 @@ uv run python src/ft_lr/__main__.py --plot plot.png
 - 実用性チェック:
 	- `test_mae` が業務上許容できる誤差幅に収まっているかを確認します。
 - 安定性チェック:
-	- `SEED` を変えて `make eval` を複数回実行し、指標のブレが小さいかを見ると信頼しやすいです。
+	- `SEED` を変えて `make eval` を複数回実行し、指標のブレが小さいかを見ると信頼しやすいです。 -->

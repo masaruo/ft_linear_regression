@@ -13,8 +13,9 @@ dependencies = [
 [dependency-groups]
 dev = [
     "mypy>=1.19.1",
-    "pytest>=9.0.2",
+    "pudb>=2025.1.5",
     "ruff>=0.15.2",
+    "types-tqdm>=4.67.3.20260303",
 ]
 
 [build-system]
@@ -23,3 +24,4 @@ build-background = "setuptools.build_meta"
 
 [tool.setuptools]
 packages = ["src"]
+

@@ -18,8 +18,8 @@ class LinearNetwork:
 
     def loss(self, x: np.ndarray, t: np.ndarray) -> float:
         y = self.predict(x)
-        l = self.last_layer.forward(y, t)
-        return l
+        loss = self.last_layer.forward(y, t)
+        return loss
 
     def gradient(self, x: np.ndarray, t: np.ndarray) -> None:
         self.loss(x, t)
