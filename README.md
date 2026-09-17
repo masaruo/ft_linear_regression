@@ -33,6 +33,10 @@ make predict KM=100000
 	- 指定した `--km` に対する予測価格です。
 	- 計算は `theta0 + theta1 * km` で行われます。
 
+### 簡単な解説
+- What we want to know;
+1. dL / d_theta0 & dL / d_theta1
+2. 
 <!-- ### 誤差指標（train/test）
 
 - `train_mae`, `test_mae`

@@ -20,9 +20,19 @@ class LinearLayer:
         return out
 
     def backward(self, dout: np.ndarray) -> np.ndarray:
+        """dout = dLoss / dy from SumOfSquaredError
+        
+        theta0
+        dy / d_theta0 = 1
+        
+        theta1
+        dy / d_theta1 = x
+        """
+        
         x = self.x_cache
         if x is None:
             raise RuntimeError("backward must be called after forward")
+        
         """theta0
         dy / d_theta0 = 1
         """
@@ -31,7 +41,9 @@ class LinearLayer:
         dy / d_theta1 = x
         """
         self.theta1.grad += np.sum(dout * x)
-
+        """x
+        dy / dx = theta1.data
+        """
         dx = dout * self.theta1.data
         return dx
 

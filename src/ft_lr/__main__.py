@@ -85,8 +85,11 @@ def to_original_params(
     """
     y = t0' + t1' * x'
     x' = (x - mean) / sd
-    x' = (-mean / sd) + (x / std)
-    y = t0 - (t1 * u / std) + (t1 / std) * x
+    
+    y = t0 + t1 * x'
+    y = t0 + (t1 * x)/sd - (t1 * mean)/sd
+    y = (t0 - (t1 * mean)/sd) + t1/sd * x
+    
     """
     theta1 = theta1_scaled / x_std
     theta0 = theta0_scaled - theta1_scaled * (x_mean / x_std)
